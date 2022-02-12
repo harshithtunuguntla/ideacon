@@ -1,5 +1,5 @@
-# ideacon
-Contribute Ideas
+# Ideacon
+Contribute Ideas you have and you wish to!!
 
 ## Project 3 of 60DaysProjects
 
