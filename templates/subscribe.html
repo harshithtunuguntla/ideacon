@@ -9,6 +9,12 @@
         integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 
     <title>Ideas</title>
+
+    <style>
+        a {
+            cursor: pointer;
+        }
+    </style>
 </head>
 
 <body>
@@ -16,7 +22,7 @@
 
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container-fluid">
-            <a class="navbar-brand" href="#">IdeaCon</a>
+            <a class="navbar-brand" onclick="window.location.href='/'">IdeaCon</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                 data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
                 aria-label="Toggle navigation">
@@ -25,17 +31,17 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#">Contribute</a>
+                        <a class="nav-link" aria-current="page"
+                            onclick="window.location.href='/contribute'">Contribute</a>
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link" aria-current="page" href="#">API</a>
+                        <a class="nav-link" aria-current="page" onclick="window.location.href='/ideaconapi'">API</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Subscribe</a>
+                        <a class="nav-link" onclic k="window.location.href='/subscribe'">Subscribe</a>
                     </li>
                 </ul>
-
             </div>
         </div>
     </nav>
@@ -45,40 +51,33 @@
 
         <div class="mx-auto" style="width: 70%;">
 
-            <h2 class="mt-5 mx-auto">Contibute Your Idea</h2>
+            <h2 class="mt-5 mx-auto">Subscribe for intresting ideas</h2>
 
-            <form class="row">
 
-                <div class="row mt-3">
-                    <!-- <label for="exampleFormControlInput1" class="form-label">Email address</label> -->
-                    <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Idea Title">
-                </div>
+            <form class="row" action="http://127.0.0.1:8000/subscription/" method="post">
 
-                <div class="row mt-3">
-                    <!-- <label for="exampleFormControlInput1" class="form-label">Email address</label> -->
-                    <input type="email" class="form-control" id="exampleFormControlInput1"
-                        placeholder="Idea Description">
-                </div>
+
+                {% csrf_token %}
+
+
 
                 <div class="row mt-3">
                     <!-- <label for="exampleFormControlInput1" class="form-label">Name</label> -->
-                    <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Your Name">
+                    <input type="text" class="form-control" id="person_n" name="person_name" placeholder="Your Name"
+                        required>
                 </div>
 
                 <div class="row mt-3">
                     <!-- <label for="exampleFormControlInput1" class="form-label">Email address</label> -->
-                    <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Email-ID">
-                </div>
-
-                <div class="row mt-3">
-                    <!-- <label for="exampleFormControlInput1" class="form-label">Email address</label> -->
-                    <input type="email" class="form-control" id="exampleFormControlInput1"
-                        placeholder="Scoial Media Profile URL">
+                    <input type="email" class="form-control" id="person_e" name="person_email" placeholder="Email-ID"
+                        required>
                 </div>
 
 
+
                 <div class="row mt-3">
-                    <button type="submit" class="btn btn-primary mb-3" style="width: 20%;">Contribute</button>
+                    <button type="submit" class="btn btn-primary mb-3" value="submit"
+                        style="width: 20%;">Subscribe</button>
                 </div>
 
 
